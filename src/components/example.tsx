@@ -3,8 +3,8 @@
 // import MyStar from './myStar';
 //import Count from '../components/count'
 import { useState } from "react"
-import Box from "./Box"
-import Boxes from "./boxes"
+//import Box from "./Box"
+//import Boxes from "./boxes"
 
 export default function Example(props: any){
 
@@ -270,31 +270,83 @@ export default function Example(props: any){
     //         }
     // </div>
 
-    const [firstName, setFirstName] = useState("")
-    const [lastName, setLastName] = useState("")
-    console.log(firstName);
-    console.log(lastName);
+    // const [formData, setFormData] = useState(
+    //     {firstName: "", lastName: "", email: ""})
     
-   function handleFirstName(event: any){
-        setLastName(event.target.value)
+    // console.log(formData);
     
-   }
-   function handleLastName(event: any){
-       setLastName(event.target.value)
-   }
+
+    // function handleChange(event: any){  
+    // setFormData(prevFormData=>{
+    //     return(
+    //         {...prevFormData, 
+    //         [event.target.name]: event.target.value}
+    //     )
+    // })
+    // }
+
+    const [formData , setFormData] = useState({
+        firstName: "",
+        lastName: "", 
+        email: "", 
+        comments: "",
+        isFriendly: false
+    })
+    
+    console.log(formData.isFriendly);
+    
+    
+    function handleChange(event: any){
+        const {name, value, checked, type} = event.target
+        setFormData(prevData => {
+            return (
+                {...prevData, 
+                [name]: type === "checkbox" ? checked : value}
+            )
+        })
+    }
 
     return (
-        <form className="form">
-            <input 
-                type="text" 
-                placeholder="First Name"
-                onChange={handleFirstName}    
-            />
-            <input 
-                type="text" 
-                placeholder="Last Name"
-                onChange={handleLastName}    
-            />
-        </form>
+            <form className="form">
+                <input 
+                    type="text" 
+                    placeholder="First Name"
+                    onChange={handleChange}  
+                    name="firstName"  
+                    value={formData.firstName}
+                />
+                <input 
+                    type="text" 
+                    placeholder="Last Name"
+                    onChange={handleChange}   
+                    name="lastName" 
+                    value={formData.lastName}
+                />
+                <input 
+                    type="email" 
+                    placeholder="Email"
+                    onChange={handleChange}   
+                    name=  "email" 
+                    value={formData.email}
+                />
+                <textarea
+                    placeholder="Comments."
+                    onChange={handleChange} 
+                    name="comments" 
+                    value={formData.comments}
+                />
+                <div>
+                    <input 
+                        type="checkbox" 
+                        id="isFriendly"
+                        name="isFriendly"
+                        checked={formData.isFriendly}
+                        onChange={handleChange}
+                    />
+                    <label className="label" htmlFor="isFriendly">Are You Friendly?</label>
+                    <br />
+                </div>
+            </form>
+                
     )
 }

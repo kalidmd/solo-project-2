@@ -10,9 +10,7 @@ import Head from './components/head'
 function App() {
   return (
     <div className="App">
-        <Example
-          
-        />
+        <Example/>
     </div>
   );
 }

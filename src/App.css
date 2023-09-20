@@ -408,10 +408,17 @@ button:focus {
 } */
                       /* FORM */
 .form {
-    text-align: center;
-    margin-top: 200px;    
+    display: flex;
+    flex-direction: column;
+    width: 30%;    
+    margin: 200px auto;
+    gap: 20px;
 }
-.form input {
+.form input, .form textarea {
     padding: 7px 0px;
     text-indent: 8px;
+    font-size: 20px;
+}
+.label {
+    padding-left: 10px;
 }
