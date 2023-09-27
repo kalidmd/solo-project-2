@@ -290,23 +290,30 @@ export default function Example(props: any){
         lastName: "", 
         email: "", 
         comments: "",
-        isFriendly: false
+        isFriendly: false,
+        employement: "",
+        favColor: ""
     })
-    
-    console.log(formData.isFriendly);
+    console.log(formData.favColor);
     
     
     function handleChange(event: any){
-        const {name, value, checked, type} = event.target
-        setFormData(prevData => {
-            return (
-                {...prevData, 
-                [name]: type === "checkbox" ? checked : value}
-            )
-        })
+        let {name, value, checked, type} = event.target
+         
+        return(
+            setFormData(prevData=>{
+                return(
+                    {
+                        ...prevData,   
+                        [name]: type === "checkbox" ? checked :value
+                    }
+                )
+            })
+        )
     }
 
     return (
+        <div>
             <form className="form">
                 <input 
                     type="text" 
@@ -346,7 +353,61 @@ export default function Example(props: any){
                     <label className="label" htmlFor="isFriendly">Are You Friendly?</label>
                     <br />
                 </div>
+
+                <fieldset>
+                    <legend>Current Employment status</legend>
+
+                    <input 
+                        type="radio" 
+                        id="unemployed" 
+                        name="employement"
+                        value="unemployed"
+                        checked={formData.employement === "unemployed"}
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="unemployed">Unemployed</label>
+                    <br />
+
+                    <input 
+                        type="radio" 
+                        id="part-time"
+                        name="employement"
+                        value="part-time"
+                        checked={formData.employement === "part-time"}
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="part-time">Part-time</label>
+                    <br />
+
+                    <input 
+                        type="radio" 
+                        id="full-time"
+                        name="employement"
+                        value="full-time"
+                        checked={formData.employement === "full-time"}
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="full-time">Full-time</label>
+                </fieldset>
+
+                <label htmlFor="favColor">What is Your Favorite Color?</label>
+                <select 
+                    name="favColor" 
+                    id="favColor" 
+                    onChange={handleChange}
+                    value={formData.favColor}    
+                >
+                    <option value="Choose">Choose</option>
+                    <option value="red">Red</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Indigo">Indigo</option>
+                    <option value="Violet">Violet</option>
+                </select>
+                <button>Submit</button>
             </form>
-                
+        </div>     
     )
 }

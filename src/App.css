@@ -411,7 +411,7 @@ button:focus {
     display: flex;
     flex-direction: column;
     width: 30%;    
-    margin: 200px auto;
+    margin: 0 auto;
     gap: 20px;
 }
 .form input, .form textarea {
@@ -419,6 +419,7 @@ button:focus {
     text-indent: 8px;
     font-size: 20px;
 }
-.label {
+.label, fieldset, fieldset label {
     padding-left: 10px;
 }
+
