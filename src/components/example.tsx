@@ -6,7 +6,7 @@ import { useState } from "react"
 //import Box from "./Box"
 //import Boxes from "./boxes"
 
-export default function Example(props: any){
+export default function Example(){
 
                     //onClick Event
     // <div className='ocean'>
@@ -284,130 +284,215 @@ export default function Example(props: any){
     //     )
     // })
     // }
-
-    const [formData , setFormData] = useState({
-        firstName: "",
-        lastName: "", 
-        email: "", 
-        comments: "",
-        isFriendly: false,
-        employement: "",
-        favColor: ""
-    })
-    console.log(formData.favColor);
+                    // FORM EXAMPLE
+    // const [formData , setFormData] = useState({
+    //     firstName: "",
+    //     lastName: "", 
+    //     email: "", 
+    //     comments: "",
+    //     isFriendly: false,
+    //     employement: "",
+    //     favColor: ""
+    // })
+    // console.log(formData.favColor);
     
     
-    function handleChange(event: any){
-        let {name, value, checked, type} = event.target
+    // function handleChange(event: any){
+    //     let {name, value, checked, type} = event.target
          
-        return(
-            setFormData(prevData=>{
-                return(
-                    {
-                        ...prevData,   
-                        [name]: type === "checkbox" ? checked :value
-                    }
-                )
-            })
-        )
-    }
+    //     return(
+    //         setFormData(prevData=>{
+    //             return(
+    //                 {
+    //                     ...prevData,   
+    //                     [name]: type === "checkbox" ? checked :value
+    //                 }
+    //             )
+    //         })
+    //     )
+    // }
+    // function handleSubmit(event: any) {
+    //     event.preventDefault()
+    //     console.log(formData);
+    // }
+    // <form onSubmit={handleSubmit} className="form">
+    //             <input 
+    //                 type="text" 
+    //                 placeholder="First Name"
+    //                 onChange={handleChange}  
+    //                 name="firstName"  
+    //                 value={formData.firstName}
+    //             />
+    //             <input 
+    //                 type="text" 
+    //                 placeholder="Last Name"
+    //                 onChange={handleChange}   
+    //                 name="lastName" 
+    //                 value={formData.lastName}
+    //             />
+    //             <input 
+    //                 type="email" 
+    //                 placeholder="Email"
+    //                 onChange={handleChange}   
+    //                 name=  "email" 
+    //                 value={formData.email}
+    //             />
+    //             <textarea
+    //                 placeholder="Comments."
+    //                 onChange={handleChange} 
+    //                 name="comments" 
+    //                 value={formData.comments}
+    //             />
+    //             <div>
+    //                 <input 
+    //                     type="checkbox" 
+    //                     id="isFriendly"
+    //                     name="isFriendly"
+    //                     checked={formData.isFriendly}
+    //                     onChange={handleChange}
+    //                 />
+    //                 <label className="label" htmlFor="isFriendly">Are You Friendly?</label>
+    //                 <br />
+    //             </div>
 
+    //             <fieldset>
+    //                 <legend>Current Employment status</legend>
+
+    //                 <input 
+    //                     type="radio" 
+    //                     id="unemployed" 
+    //                     name="employement"
+    //                     value="unemployed"
+    //                     checked={formData.employement === "unemployed"}
+    //                     onChange={handleChange}
+    //                 />
+    //                 <label htmlFor="unemployed">Unemployed</label>
+    //                 <br />
+
+    //                 <input 
+    //                     type="radio" 
+    //                     id="part-time"
+    //                     name="employement"
+    //                     value="part-time"
+    //                     checked={formData.employement === "part-time"}
+    //                     onChange={handleChange}
+    //                 />
+    //                 <label htmlFor="part-time">Part-time</label>
+    //                 <br />
+
+    //                 <input 
+    //                     type="radio" 
+    //                     id="full-time"
+    //                     name="employement"
+    //                     value="full-time"
+    //                     checked={formData.employement === "full-time"}
+    //                     onChange={handleChange}
+    //                 />
+    //                 <label htmlFor="full-time">Full-time</label>
+    //             </fieldset>
+
+    //             <label htmlFor="favColor">What is Your Favorite Color?</label>
+    //             <select 
+    //                 name="favColor" 
+    //                 id="favColor" 
+    //                 onChange={handleChange}
+    //                 value={formData.favColor}    
+    //             >
+    //                 <option value="Choose">Choose</option>
+    //                 <option value="red">Red</option>
+    //                 <option value="Orange">Orange</option>
+    //                 <option value="Yellow">Yellow</option>
+    //                 <option value="Green">Green</option>
+    //                 <option value="Blue">Blue</option>
+    //                 <option value="Indigo">Indigo</option>
+    //                 <option value="Violet">Violet</option>
+    //             </select>
+    //             <button>Submit</button>
+    //         </form>
+                            // FORM WITH PASSWORD
+    // const [formData, setFormData] = useState(
+    //     {
+    //         email: "",
+    //         password: "",
+    //         confirmPassword: "",
+    //         isNewsletter: false
+    //     }
+    // )
+    // function handleChange(event: any) {
+    //     let {name, value, checked, type} = event.target;        
+    //     setFormData(prevData => ({
+    //         ...prevData,
+    //         [name]: type === "checkbox"? checked : value
+    //     }))
+    // }
+
+    // function submitChange(event: any) {
+    //     event.preventDefault()
+    //     if (formData.password === formData.confirmPassword){
+    //         console.log("Succssfully Signed Up");
+    //         console.log(formData);
+    //     }
+    //     else {
+    //         console.log("Password do not match!");
+    //         return
+    //     }  
+    //     if (formData.isNewsletter === true){
+    //         console.log("Thanks for signing up for our newsletter!")
+    //     }
+    // }
+
+    // <div onSubmit={submitChange} className="form-container">
+    //         <form >
+    //             <input
+    //                 type="email" 
+    //                 name="email"
+    //                 value={formData.email}
+    //                 placeholder="Email"
+    //                 onChange={handleChange}
+    //             />  
+    //             <br />
+    //             <br />
+    //             <input 
+    //                 type="password" 
+    //                 name="password"
+    //                 value={formData.password}
+    //                 placeholder="Password"
+    //                 onChange={handleChange}
+    //             />  
+    //             <br />
+    //             <br />
+    //             <input 
+    //                 type="password" 
+    //                 name="confirmPassword"
+    //                 value={formData.confirmPassword}
+    //                 placeholder="Confirm Password"
+    //                 onChange={handleChange}
+    //             />  
+    //             <br />
+    //             <br />
+    //             <input 
+    //                 type="checkbox"
+    //                 id="isNewsletter" 
+    //                 name="isNewsletter"
+    //                 checked={formData.isNewsletter}
+    //                 onChange={handleChange}
+    //             />
+    //             <label htmlFor="isNewsletter">i want to join the newsletter</label>
+    //             <br />
+    //             <br />
+    //             <button className="submit-btn">Sign Up</button>
+    //         </form>     
+    //     </div>
+
+    const [starWarsData, setStarWarsData] = useState({})
+    console.log(starWarsData);
+    
+        fetch("https://swapi.dev/api/people/1")
+                .then(res => res.json())
+                .then(data => setStarWarsData(data))
     return (
         <div>
-            <form className="form">
-                <input 
-                    type="text" 
-                    placeholder="First Name"
-                    onChange={handleChange}  
-                    name="firstName"  
-                    value={formData.firstName}
-                />
-                <input 
-                    type="text" 
-                    placeholder="Last Name"
-                    onChange={handleChange}   
-                    name="lastName" 
-                    value={formData.lastName}
-                />
-                <input 
-                    type="email" 
-                    placeholder="Email"
-                    onChange={handleChange}   
-                    name=  "email" 
-                    value={formData.email}
-                />
-                <textarea
-                    placeholder="Comments."
-                    onChange={handleChange} 
-                    name="comments" 
-                    value={formData.comments}
-                />
-                <div>
-                    <input 
-                        type="checkbox" 
-                        id="isFriendly"
-                        name="isFriendly"
-                        checked={formData.isFriendly}
-                        onChange={handleChange}
-                    />
-                    <label className="label" htmlFor="isFriendly">Are You Friendly?</label>
-                    <br />
-                </div>
-
-                <fieldset>
-                    <legend>Current Employment status</legend>
-
-                    <input 
-                        type="radio" 
-                        id="unemployed" 
-                        name="employement"
-                        value="unemployed"
-                        checked={formData.employement === "unemployed"}
-                        onChange={handleChange}
-                    />
-                    <label htmlFor="unemployed">Unemployed</label>
-                    <br />
-
-                    <input 
-                        type="radio" 
-                        id="part-time"
-                        name="employement"
-                        value="part-time"
-                        checked={formData.employement === "part-time"}
-                        onChange={handleChange}
-                    />
-                    <label htmlFor="part-time">Part-time</label>
-                    <br />
-
-                    <input 
-                        type="radio" 
-                        id="full-time"
-                        name="employement"
-                        value="full-time"
-                        checked={formData.employement === "full-time"}
-                        onChange={handleChange}
-                    />
-                    <label htmlFor="full-time">Full-time</label>
-                </fieldset>
-
-                <label htmlFor="favColor">What is Your Favorite Color?</label>
-                <select 
-                    name="favColor" 
-                    id="favColor" 
-                    onChange={handleChange}
-                    value={formData.favColor}    
-                >
-                    <option value="Choose">Choose</option>
-                    <option value="red">Red</option>
-                    <option value="Orange">Orange</option>
-                    <option value="Yellow">Yellow</option>
-                    <option value="Green">Green</option>
-                    <option value="Blue">Blue</option>
-                    <option value="Indigo">Indigo</option>
-                    <option value="Violet">Violet</option>
-                </select>
-                <button>Submit</button>
-            </form>
-        </div>     
+                <pre>{JSON.stringify(starWarsData, null, 2)}</pre>     
+        </div>
     )
 }

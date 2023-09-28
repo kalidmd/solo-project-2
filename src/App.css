@@ -60,20 +60,24 @@ img{
     flex-direction: column;
 }
 .form{
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 20px 1fr;
+    grid-gap: 20px 0;
+}
+#bottom-txt {
+    grid-column: 3 / 4;
 }
 .form input[type="text"] {
-    width: 48%;
     padding: 12px 0;
     text-indent: 10px;
     border-radius: 4px;
     border: 1px solid #ddd;
     outline: none;
+    margin-top: 20px;
 }
 .main--btn {
-    margin: 30px 0;
+    grid-area: 2 / 1 / 2 / 4;
+    margin-bottom: 20px;
     padding: 10px 0;
     font-size: 16px;
     color: #eeecec;
@@ -109,7 +113,7 @@ img{
 .meme-text {
     font-size: 45px;
     font-weight: 1000;
-    color: #000;
+    color: rgb(149, 225, 91);
 } */
 
                      /*ONCLICK EVENT 
@@ -406,8 +410,8 @@ button:focus {
     margin-top: 25px;
     cursor: pointer;
 } */
-                      /* FORM */
-.form {
+                      /* FORM EXAMPLE*/
+/* .form {
     display: flex;
     flex-direction: column;
     width: 30%;    
@@ -421,5 +425,49 @@ button:focus {
 }
 .label, fieldset, fieldset label {
     padding-left: 10px;
-}
+} */
 
+                    /* FORM WITH PASSWORD */
+/* body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: indigo;
+}
+.form-container {
+    background-color: #fff;
+    padding: 100px;
+    border-radius: 10px;
+}
+form input {
+    padding: 14px 40px;
+    text-indent: 10px;
+    border-radius: 10px;
+    border: 1px solid #c4c2c2;
+}
+#isNewsletter {
+    margin-right: 5px;
+}
+.submit-btn  {
+    display: block;
+    margin: 0 auto;
+    padding: 7px 16px;
+    font-size: 20px;
+    background-color: indigo;
+    color: #fff;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    opacity: 0.8;
+} */
+                                /* GRID EXAMPLE */
+/* .grid-container {
+    width: 70%;
+    margin: 5px auto;
+    background-color: rgb(245, 127, 127);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 5px;
+} */
